@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Task</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div id="capture" class="background-wrapper">
+        <img src="assets/images/tree_1280_760.jpg" />
+        <button class="overlay-btn">DPA</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            html2canvas(document.querySelector("#capture")).then((canvas) => {
+                $(canvas).addClass("canvas")
+                $('#capture').replaceWith(canvas)
+            });
+        });
+    </script>
+</body>
+
+</html>
